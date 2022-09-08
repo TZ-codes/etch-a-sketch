@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 
+const gridSize = document.querySelector('#grid-size');
 
 
 const grid = (num) => {
@@ -19,8 +20,18 @@ const grid = (num) => {
     }
   }
 }
+// gridSize.onchange = grid(parseInt(gridSize.value));
+gridSize.onchange = () => {
+  container.innerHTML = '';
+  // let container = document.createElement('div')
+  // container.classList.add('container')
+  document.body.appendChild(container);
+  console.log(typeof parseInt(gridSize.value));
+  grid(parseInt(gridSize.value));
+}
 
-grid(20);
+
+
 
 
 
